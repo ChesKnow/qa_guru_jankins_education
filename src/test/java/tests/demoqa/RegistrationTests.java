@@ -27,6 +27,7 @@ public class RegistrationTests extends TestBase {
         $("#hobbiesWrapper").$(byText("Sports")).click();
 //        $("#uploadPicture").uploadFromClasspath("img/1.png");
         $("#currentAddress").setValue("Some address 1");
+        $("#close-fixedban").click();
         $("#state").scrollTo().click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
