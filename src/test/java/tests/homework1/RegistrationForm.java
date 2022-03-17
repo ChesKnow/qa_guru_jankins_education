@@ -24,7 +24,7 @@ public class RegistrationForm {
     String hobbies1 = "Sports";
     String hobbies2 = "Music";
     String subject = "Maths";
-    String pictureName = "/img/Photo.jpg";
+    String pictureName = "Photo.jpg";
     String state = "NCR";
     String city = "Noida";
     String day = "21";
