@@ -20,7 +20,7 @@ public class RegistrationPageTests extends RegistrationForm{
                 .setHobby(hobbies2);
         registrationPage.setBirthDate(day, month, year);
         registrationPage.enterSubject(subject);
-        registrationPage.uploadPicture(pictureName);
+        //registrationPage.uploadPicture(pictureName);
         registrationPage.closeFixedBanner();
         registrationPage.setState(state);
         registrationPage.setCity(city);
