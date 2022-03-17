@@ -15,8 +15,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationForm {
 
-    RegistrationForm registrationPage = new RegistrationForm();
-
     String firstName = "Ivanushka";
     String lastName = "Durachok";
     String studentEmail = "VanyaDuren@tridevyatoe.ru";

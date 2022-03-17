@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 public class RegistrationPageTests extends RegistrationForm{
 
+    RegistrationForm registrationPage = new RegistrationForm();
+
     @Test
     void apfTest() {
 
