@@ -33,7 +33,6 @@ public class RegistrationPageTests extends RegistrationForm{
                 .checkForm("Date of Birth", day + " " + month + "," + year)
                 .checkForm("Subjects", subject)
                 .checkForm("Hobbies", hobbies1 + ", " + hobbies2)
-                .checkForm("Picture", pictureName)
                 .checkForm("Address", currentAddress)
                 .checkForm("State and City", state + " " + city);
 
