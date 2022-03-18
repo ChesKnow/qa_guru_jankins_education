@@ -40,8 +40,10 @@ public class RegistrationForm {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("browser_address");
         Login cfg = ConfigFactory.create(Login.class);
+        cfg.name(); cfg.password();
+        Configuration.remote = System.getProperty("browser_address");
+
 
     }
 
