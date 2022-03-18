@@ -39,10 +39,9 @@ public class RegistrationForm {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
         Login cfg = ConfigFactory.create(Login.class);
-        cfg.name(); cfg.password();
-        Configuration.remote = System.getProperty("browser_address");
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = "https://" + cfg.name() + ":" + cfg.password() + "selenoid.autotests.cloud/wd/hub";
 
 
     }
