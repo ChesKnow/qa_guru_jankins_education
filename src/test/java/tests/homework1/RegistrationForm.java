@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import helpers.Attach;
 import io.qameta.allure.Step;
+import org.aeonbits.owner.Config;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -40,6 +41,13 @@ public class RegistrationForm {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("browser_address");
+
+    }
+
+    public interface Login extends Config {
+
+        String name();
+        String password();
     }
 
     @AfterEach
