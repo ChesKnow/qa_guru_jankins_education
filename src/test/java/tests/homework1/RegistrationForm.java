@@ -41,7 +41,7 @@ public class RegistrationForm {
         capabilities.setCapability("enableVideo", true);
         Login cfg = ConfigFactory.create(Login.class);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://" + cfg.name() + ":" + cfg.password() + "selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://" + cfg.name() + ":" + cfg.password() + "@selenoid.autotests.cloud/wd/hub";
 
 
     }
