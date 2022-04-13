@@ -6,6 +6,7 @@ import helpers.Attach;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tests.components.CalendarComponents;
 
@@ -34,10 +35,11 @@ public class RegistrationForm {
     @BeforeAll
     static void startPage() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        //Configuration.browserSize = "1920x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("startMaximised", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("browser_address");
     }
