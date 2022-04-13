@@ -40,8 +40,8 @@ public class RegistrationForm {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("startMaximised", true);        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("browser_address");
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = "https://selenoid.autotests.cloud/wd/hub";
     }
 
    @AfterEach
