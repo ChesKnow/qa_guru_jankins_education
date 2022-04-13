@@ -46,7 +46,7 @@ public class RegistrationForm {
     void addAttachment() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        Attach.browserConsoleLogs();;
+        Attach.browserConsoleLogs();
         Attach.addVideo();
         closeWebDriver();
     }
