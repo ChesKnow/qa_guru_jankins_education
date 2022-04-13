@@ -35,11 +35,14 @@ public class RegistrationForm {
     @BeforeAll
     static void startPage() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browser = "firefox";
+
         Configuration.browserSize = "1920x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "firefox");
+        capabilities.setCapability("browserVersion", "98.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://selenoid.autotests.cloud/wd/hub";
     }
