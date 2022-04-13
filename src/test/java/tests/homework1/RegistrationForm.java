@@ -35,13 +35,12 @@ public class RegistrationForm {
     @BeforeAll
     static void startPage() {
         Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1920x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("startMaximised", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("browser_address");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
     @AfterEach
