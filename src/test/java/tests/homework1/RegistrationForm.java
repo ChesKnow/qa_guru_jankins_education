@@ -27,7 +27,7 @@ public class RegistrationForm {
     String subject = "Maths";
     String pictureName = "Photo.jpg";
     String state = "NCR";
-    String city = "Noida";
+    String city = "Delhi";
     String day = "21";
     String month = "March";
     String year = "2012";
@@ -35,16 +35,16 @@ public class RegistrationForm {
     @BeforeAll
     static void startPage() {
         Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.browserSize = "1920x1080";
+        Configuration.browser = "firefox";
+        Configuration.browserSize = "1920x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("startMaximised", true);
-        Configuration.browserCapabilities = capabilities;
+        capabilities.setCapability("startMaximised", true);        Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("browser_address");
     }
 
-    @AfterEach
+   @AfterEach
     void addAttachment() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
