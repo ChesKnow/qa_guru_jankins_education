@@ -6,6 +6,7 @@ import helpers.Attach;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tests.components.CalendarComponents;
@@ -37,6 +38,7 @@ public class RegistrationForm {
         Configuration.baseUrl = "https://demoqa.com";
 
         Configuration.browserSize = "1920x1080";
+        Configuration.browser = "firefox";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "firefox");
         capabilities.setCapability("browserVersion", "98.0");
@@ -44,7 +46,7 @@ public class RegistrationForm {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
    @AfterEach
@@ -143,7 +145,8 @@ public class RegistrationForm {
     @Step("Указываем город")
     public void setCity(String cityName) {
         cityLocator.click();
-        stateCity.$(byText(cityName)).click();
+        stateCity.click();
+        stateCity.sendKeys("Delhi" + Keys.ENTER);
     }
     @Step("Сабмитим форму")
     public void submitForm() {
