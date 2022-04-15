@@ -1,15 +1,20 @@
 package tests.homework1;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import helpers.Attach;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import tests.components.CalendarComponents;
+import org.openqa.selenium.JavascriptExecutor;
 
+import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -35,7 +40,8 @@ public class RegistrationForm {
     @BeforeAll
     static void startPage() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "3000x2000";
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
@@ -122,28 +128,24 @@ public class RegistrationForm {
     }
     @Step("Указываем интересующие предметы обучения")
     public void enterSubject(String subjectName) {
-        subjectLocator.setValue(subjectName).pressEnter();
-    }
+        subjectLocator.scrollTo().setValue(subjectName).pressEnter();    }
     @Step("Загружаем фото")
     public void uploadPicture(String pictureName) {
-        upload.uploadFromClasspath(pictureName);
-    }
+        upload.uploadFromClasspath(pictureName);    }
     @Step("Закрываем баннер")
     public void closeFixedBanner() {
         $("#close-fixedban").click();}
     @Step("Указываем регион")
     public void setState(String stateName) {
-        stateLocator.scrollTo().click();
-        stateCity.$(byText(stateName)).click();
-    }
+        stateLocator.scrollIntoView(true).click();
+        stateCity.$(byText(stateName)).click();    }
     @Step("Указываем город")
     public void setCity(String cityName) {
         cityLocator.click();
-        stateCity.$(byText(cityName)).click();
-    }
+        stateCity.$(byText(cityName)).click();    }
     @Step("Сабмитим форму")
     public void submitForm() {
-        $("#submit").click();
+        $("#submit").scrollIntoView(true).click();
     }
     @Step("Проверяем, что сабмит прошел успешно")
     public void checkSubmitOk() {
