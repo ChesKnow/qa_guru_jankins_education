@@ -42,11 +42,13 @@ public class RegistrationForm {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "3000x2000";
 
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://"+System.getProperty("user")+":"+System.getProperty("password")+
+                "@"+System.getProperty("remoteUrl");
     }
 
     @AfterEach
